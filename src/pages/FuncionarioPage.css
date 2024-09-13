@@ -1,0 +1,134 @@
+.page-container {
+  padding: 20px;
+}
+
+.page-title {
+  margin-bottom: 20px;
+}
+
+.button {
+  margin-bottom: 20px;
+  position: relative;
+  left: -20px;
+}
+
+.funcionario-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px; 
+}
+
+.funcionario-item {
+  background: #ffffff;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  width: calc(33.333% - 20px); 
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  min-height: 200px; 
+  position: relative;
+}
+
+.funcionario-info {
+  margin-bottom: 20px;
+}
+
+.funcionario-projetos {
+  margin-top: 20px; 
+  margin-bottom: 60px;
+}
+
+.funcionario-projetos-item:last-child {
+  margin-bottom: 20px;
+}
+
+.funcionario-actions {
+  display: flex;
+  gap: 10px;
+  margin-top: auto; 
+  position: absolute; 
+  bottom: 20px; 
+  left: 20px; 
+}
+
+.funcionario-actions button {
+  white-space: nowrap; 
+}
+
+.dialog-content {
+  padding: 20px;
+}
+
+@media (max-width: 1024px) {
+  .funcionario-item {
+    width: calc(50% - 20px); 
+  }
+}
+
+@media (max-width: 600px) {
+  .funcionario-item {
+    width: calc(100% - 20px);
+  }
+}
+
+.funcionario.page-container {
+  padding-top: 60px; 
+  text-align: left; 
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start; 
+}
+
+.page-header {
+  display: flex;
+  justify-content: space-between; 
+  width: 100%;
+  margin-bottom: 15px;
+}
+
+.funcionario-page-title-container {
+  display: flex;
+  justify-content: space-between; 
+  align-items: center;
+}
+
+.funcionario.page-title {
+  font-size: 2.5rem; 
+  font-weight: bold; 
+  color: #333; 
+  margin: 0;
+}
+
+.funcionario.button {
+  margin: 0;
+  margin-left: 20px; 
+  display: flex; 
+}
+
+.funcionario .projetos {
+  margin-top: 1px;
+}
+
+.funcionario .projetos-title {
+  font-weight: bold; 
+}
+
+.funcionario .projetos-list {
+  list-style-type: none; 
+  padding: 0; 
+  margin: 0; 
+  display: block;
+  transform: translateX(-20px); 
+}
+
+.funcionario .projetos-list li {
+  font-size: 0.875rem; 
+  display: block;
+}
+
+.funcionario .projetos-list li:last-child {
+  margin-bottom: 60px; 
+}

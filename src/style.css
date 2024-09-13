@@ -1,0 +1,176 @@
+body {
+  font-family: 'Poppins', sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f4f4f4;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  min-height: 100vh;
+}
+
+header {
+  background-color: #f4f4f4;
+  padding: 10px 20px;
+  width: 100%;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+  display: flex;
+  justify-content: center;
+}
+
+.header-container {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  max-width: 1400px;
+  margin: 0 auto;
+  justify-content: space-between;
+  padding: 0 20px;
+}
+
+.logo {
+  margin-right: 20px;
+}
+
+.logo-img {
+  height: 110px;
+}
+
+.nav-links {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+}
+
+nav {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  box-sizing: border-box;
+  padding-left: 0;
+  padding-right: 210px;
+}
+
+nav a {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 500;
+  font-size: 20px;
+  line-height: 28px;
+  text-decoration: none;
+  color: #000000;
+}
+
+nav a:hover {
+  text-decoration: underline;
+}
+
+main {
+  flex-grow: 1;
+  width: 100%;
+  margin-top: 80px;
+  padding: 20px;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Página inicial */
+.home-page .image-fundo {
+  width: 100%;
+  height: 83vh;
+  object-fit: cover;
+  display: block;
+  margin-top: 20px;
+}
+
+.home-page .texto-orla {
+  position: absolute;
+  top: 45%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 100%;
+  text-align: center;
+  color: #ffffff;
+}
+
+.home-page .texto-orla h1 {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 400;
+  font-size: 64px;
+  line-height: 80px;
+  margin: 0;
+  word-break: break-word;
+  hyphens: auto;
+}
+
+.home-page .texto-descricao {
+  position: absolute;
+  top: 63%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 40%;
+  text-align: center;
+  color: #ffffff;
+}
+
+.home-page .texto-descricao p {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 34px;
+  margin: 0;
+  word-break: break-word;
+  hyphens: auto;
+}
+
+.funcionario-page .image-fundo,
+.projeto-page .image-fundo {
+  display: none;
+}
+
+.funcionario-page .texto-orla,
+.projeto-page .texto-orla,
+.funcionario-page .texto-descricao,
+.projeto-page .texto-descricao {
+  display: none;
+}
+
+.container {
+  padding: 20px;
+  width: 100%; 
+  max-width: 1200px; 
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+}
+
+@media (max-width: 600px) {
+  nav a {
+    font-size: 1rem;
+  }
+
+  .home-page .texto-orla h1 {
+    font-size: 2rem;
+    padding: 10px;
+  }
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: #333;
+  font-size: 1.2rem;
+  margin: 0 15px;
+  transition: all 0.3s ease;
+}
+
+.nav-links a.active {
+  font-weight: bold;
+  color: #000; /* Cor do texto quando ativo */
+}
+
