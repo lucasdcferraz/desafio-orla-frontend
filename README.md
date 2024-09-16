@@ -1,70 +1,79 @@
-# Getting Started with Create React App
+# Desafio Orla - Frontend
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Este é o frontend do projeto **Desafio Orla**, desenvolvido em React, que integra com uma API RESTful no backend para gerenciar projetos e funcionários.
 
-## Available Scripts
+## Tecnologias Utilizadas
 
-In the project directory, you can run:
+- **React**: Biblioteca JavaScript para criação de interfaces de usuário.
+- **Material-UI**: Biblioteca de componentes React com design moderno e responsivo.
+- **CSS3**: Usado para customização do design e estilo do site.
+- **Axios**: Biblioteca para realizar requisições HTTP ao backend.
 
-### `npm start`
+## Funcionalidades
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+- **Página Inicial**: Uma página de boas-vindas com links para acessar as páginas de funcionários e projetos.
+  
+- **Página de Funcionários**:
+  - Listagem de todos os funcionários cadastrados.
+  - Criação de novos funcionários.
+  - Edição e exclusão de funcionários existentes.
+  - Associação de funcionários a projetos.
+  - Visualização dos projetos associados a cada funcionário.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+- **Página de Projetos**:
+  - Listagem de todos os projetos cadastrados.
+  - Criação de novos projetos.
+  - Edição e exclusão de projetos existentes.
+  - Associação de projetos a funcionários.
+  - Visualização dos funcionários associados a cada projeto.
 
-### `npm test`
+## Instalação
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+Para rodar o projeto localmente, siga os passos abaixo:
 
-### `npm run build`
+1. **Clone o repositório:**
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+```bash
+git clone https://github.com/seu-usuario/desafio-orla-frontend.git
+```
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+2. **Navegue até o diretório do projeto:**
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+```bash
+cd desafio-orla-frontend
+```
 
-### `npm run eject`
+3. **Instale as dependências:**
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+```bash
+npm install
+```
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+4. **Inicie o servidor de desenvolvimento:**
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+```bash
+npm start
+```
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+O frontend será iniciado em http://localhost:3000.
 
-## Learn More
+## Configuração
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+### Conexão com o Backend
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+Certifique-se de que o backend da API esteja rodando em [http://localhost:8080](http://localhost:8080). O serviço Axios, localizado em `src/services/api.js`, já está configurado para apontar para essa URL. Caso necessário, ajuste a `baseURL` conforme o ambiente:
 
-### Code Splitting
+```js
+import axios from 'axios';
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+const api = axios.create({
+  baseURL: 'http://localhost:8080', // URL do backend
+});
 
-### Analyzing the Bundle Size
+export default api;
+```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+### Estilo e Design
 
-### Making a Progressive Web App
+O design do frontend foi desenvolvido utilizando **CSS personalizado** e a biblioteca **Material-UI** para criar uma interface moderna e totalmente responsiva, garantindo uma boa experiência de uso em diferentes dispositivos.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
