@@ -12,15 +12,19 @@ Este é o frontend do projeto **Desafio Orla**, desenvolvido em React, que integ
 ## Funcionalidades
 
 - **Página Inicial**: Uma página de boas-vindas com links para acessar as páginas de funcionários e projetos.
+  
 - **Página de Funcionários**:
   - Listagem de todos os funcionários cadastrados.
   - Criação de novos funcionários.
   - Edição e exclusão de funcionários existentes.
   - Associação de funcionários a projetos.
+  - Visualização dos projetos associados a cada funcionário.
+
 - **Página de Projetos**:
   - Listagem de todos os projetos cadastrados.
   - Criação de novos projetos.
   - Edição e exclusão de projetos existentes.
+  - Associação de projetos a funcionários.
   - Visualização dos funcionários associados a cada projeto.
 
 ## Instalação
