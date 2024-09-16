@@ -25,6 +25,8 @@ const ProjetoPage = () => {
         funcionarioIds: false
     });
 
+    const [validationOpen, setValidationOpen] = useState(false);
+
     const navigate = useNavigate();
 
     const fetchProjetos = useCallback(async () => {
@@ -127,7 +129,7 @@ const ProjetoPage = () => {
         const newErrors = {
             nome: !form.nome,
             dataCriacao: !form.dataCriacao,
-            funcionarioIds: !form.funcionarioIds.length
+            funcionarioIds: !form.funcionarioIds
         };
         setErrors(newErrors);
         return !Object.values(newErrors).includes(true);
@@ -135,6 +137,7 @@ const ProjetoPage = () => {
 
     const handleSubmit = async () => {
         if (!validateForm()) {
+            setValidationOpen(true);
             return;
         }
     
@@ -250,23 +253,20 @@ const ProjetoPage = () => {
                         error={errors.dataCriacao}
                         helperText={errors.dataCriacao ? 'Data de Criação é obrigatória' : ''}
                     />
-                    <InputLabel id="funcionarios-label">Funcionários *</InputLabel>
+                    <InputLabel id="funcionarios-label">Funcionários</InputLabel>
                     <Select
-                        labelId="funcionarios-label"
-                        name="funcionarioIds"
                         multiple
+                        labelId="funcionarios-label"
                         value={form.funcionarioIds}
                         onChange={handleSelectChange}
-                        fullWidth
-                        error={errors.funcionarioIds}
                         renderValue={(selected) => (
-                            <div className="selected-funcionarios">
-                                {selected.map((id) => {
-                                    const funcionario = funcionarios.find((f) => f.id === id);
-                                    return funcionario ? funcionario.nome : '';
-                                }).join(', ')}
+                            <div>
+                                {funcionarios.filter(funcionario => form.funcionarioIds.includes(funcionario.id)).map(funcionario => (
+                                    <div key={funcionario.id}>{funcionario.nome}</div>
+                                ))}
                             </div>
                         )}
+                        fullWidth
                     >
                         {funcionariosFiltrados.map((funcionario) => (
                             <MenuItem key={funcionario.id} value={funcionario.id}>
@@ -274,14 +274,24 @@ const ProjetoPage = () => {
                             </MenuItem>
                         ))}
                     </Select>
-                    {errors.funcionarioIds && <Typography color="error">Funcionários são obrigatórios</Typography>}
-                </DialogContent>
+                    </DialogContent>
                 <DialogActions>
                     <Button onClick={handleClose} color="primary">
                         Cancelar
                     </Button>
                     <Button onClick={handleSubmit} color="primary">
-                        Salvar
+                        {editItem ? 'Salvar' : 'Adicionar'}
+                    </Button>
+                </DialogActions>
+            </Dialog>
+            <Dialog open={validationOpen} onClose={() => setValidationOpen(false)}>
+                <DialogTitle>Validação do Formulário</DialogTitle>
+                <DialogContent>
+                    <Typography>Por favor, preencha todos os campos obrigatórios.</Typography>
+                </DialogContent>
+                <DialogActions>
+                    <Button onClick={() => setValidationOpen(false)} color="primary">
+                        OK
                     </Button>
                 </DialogActions>
             </Dialog>

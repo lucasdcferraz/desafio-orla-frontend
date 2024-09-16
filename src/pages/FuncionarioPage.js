@@ -312,7 +312,6 @@ const FuncionarioPage = () => {
                             </MenuItem>
                         ))}
                     </Select>
-                    {errors.projetoIds && <Typography color="error">Selecione pelo menos um projeto</Typography>}
                 </DialogContent>
                 <DialogActions>
                     <Button onClick={handleClose} color="primary">
